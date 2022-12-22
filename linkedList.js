@@ -89,6 +89,23 @@ class LinkedList {
         }
     }
     
+    // this funciton will update the current value to the update value
+    update(currentData, newData){
+        if(this.head === null){
+            console.log('empty linked list')
+            return
+        }
+        
+        let current = this.head
+        while(current){
+            if(current.data === currentData){
+                current.data = newData
+                return
+            }
+            current = current.next
+        }
+    }
+    
 }
 
 const linkedList = new LinkedList();
@@ -97,7 +114,10 @@ linkedList.prepend(5);
 linkedList.prepend(3);
 linkedList.prepend(10);
 linkedList.append(10);
-linkedList.delete(5)
+// linkedList.delete(5)
+linkedList.update(5,9)
+
+
 
 
 
